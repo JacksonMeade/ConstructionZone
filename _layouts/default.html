@@ -1098,7 +1098,12 @@
                     <td class="collapse navbar-collapse" id="navbarSupportedContent2" style="padding:0px !important; width:100% !important">
                         <ul class="navbar-nav nav-dropdown navbar-logo" style="font-family:'Montserrat-ExtraBold'; background:rgb(245, 245, 245); padding-top:0rem; padding-bottom:0rem; margin-right:0px !important; width:100%">
                             <li style=" width:12.5%" class="nav-item dropdown">
-                                <a style="font-family:'Montserrat-ExtraBold';" class="nav-link link text-black display-4" href="//" data-toggle="dropdown-submenu">
+                              {{% if (page.category[0] == "About") %}}
+                                <a style="font-family:'Montserrat-ExtraBold';" class="nav-link link text-black display-4 activeSpecial" href="//" data-toggle="dropdown-submenu">
+                              {{% endif %}}
+                              {{% if (page.category[0] != "About")%}}
+                              <a style="font-family:'Montserrat-ExtraBold';" class="nav-link link text-black display-4" href="//" data-toggle="dropdown-submenu">
+                              {{% endif %}}
                                     About
                                 </a>
                                 <!--Default Dropdown-->
