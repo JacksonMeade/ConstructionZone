@@ -2,7 +2,7 @@
 layout: default
 title: "Hello world!"
 date: 2017-05-17 16:16:01 -0600
-tag: [featured, development]
+tags: [featured, development]
 readMoreType: Read More
 ---
 

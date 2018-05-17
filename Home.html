@@ -323,7 +323,7 @@ layout: default
     <div style="padding:0px" class="container grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 0 }'>
 
 {% for post in site.posts %}
-   {% if post.tag[1] == "featured" %}
+   {% if post.tags[1] == "featured" %}
         <!--Object Template-->
         <div class="col-md-4 grid-item" style="padding:1rem 1rem 2rem 1rem;">
             <div class="col-md-12" style="padding:0px;">
