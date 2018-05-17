@@ -6,6 +6,7 @@ category: [development]
 tags: [featured, development]
 readMoreType: Read More
 reviewImgUrl: "assets/images/tsaTeam.jpg"
+permalink: /helloworld
 ---
 
 This is basic text to test the ability of the post to create stuff.
