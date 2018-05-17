@@ -1139,7 +1139,7 @@
                                                 </div>
                                                 <div class="footer3 section_3" id="footer3-7" style=" height:100%; width:100%; padding:1rem; background:rgb(235,235,235);">
                                                     <div class="media-container-row content">
-                                                  {% for post in site.posts limit:4 %}
+                                                  {% for post in site.posts limit:4 where: "category","About" %}
                                                   {% if post.category[0] == "About" %}
                                                   <div class="col-md-3 col-sm-4">
                                                       <a class="hovery">
@@ -1154,7 +1154,7 @@
                                                     {% endfor %}
                                                   </div>
                                                    <div class="media-container-row content">
-                                                {% for post in site.posts limit:4 offset:4 %}
+                                                {% for post in site.posts limit:4 offset:4 where: "category","About" %}
                                                 {% if post.category[0] == "About" %}
                                                 <div class="col-md-3 col-sm-4">
                                                     <a class="hovery">
