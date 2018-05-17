@@ -75,94 +75,26 @@
                                                             </div>
                                                         </div>
                                                         <div class="footer3 section_3" id="footer3-7" style="height:inherit; width:100%; padding:1rem;">
+                                                          {% int i = 0; %}
+                                                          {% for post in site.posts %}
+                                                          {% if ((i < 9) && (post.category[0] == "About")) %}
+                                                          {% if ((i %% 4) == 0)%}
                                                             <div class="content">
+                                                          {% endif %}
                                                                 <div class="col-md-12 col-sm-12">
                                                                     <div style="text-align:center">
 
-                                                                        <span style="text-align:center; width:100%; color: #163eae; font-family:'Montserrat-Black'; text-transform:uppercase;">TSA FACTS</span>
-                                                                        <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light;" class="listServe2">The who, what, when, where, why and how. Stats, data and information about TSA.</p>
+                                                                        <span style="text-align:center; width:100%; color: #163eae; font-family:'Montserrat-Black'; text-transform:uppercase;">{{ post.title }}</span>
+                                                                        <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light;" class="listServe2">{{ post.blurb }}</p>
                                                                         <br />
                                                                         <a style="margin:0px; padding:0.5rem 2rem 0.5rem 2rem; width:100%;" class="btn btn-primary">More</a>
                                                                         <hr />
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-md-12 col-sm-12">
-                                                                    <div style="text-align:center">
-
-                                                                        <span style="text-align:center; width:100%; color: #163eae; font-family:'Montserrat-Black'; text-transform:uppercase;">VIDEO LIBRARY</span>
-                                                                        <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light;" class="listServe2">View competitive event entries, promotional TSA videos and more.</p>
-                                                                        <br />
-                                                                        <a style="margin:0px; padding:0.5rem 2rem 0.5rem 2rem; width:100%;" class="btn btn-primary">More</a>
-                                                                        <hr />
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-12 col-sm-12">
-                                                                    <div style="text-align:center">
-
-                                                                        <span style="text-align:center; width:100%; color: #163eae; font-family:'Montserrat-Black'; text-transform:uppercase;">CTSO LINKS</span>
-                                                                        <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light;" class="listServe2">TSA is one of nine Career and Technical Student Organizations.</p>
-                                                                        <br />
-                                                                        <a style="margin:0px; padding:0.5rem 2rem 0.5rem 2rem; width:100%;" class="btn btn-primary">More</a>
-                                                                        <hr />
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-12 col-sm-12">
-                                                                    <div style="text-align:center">
-
-                                                                        <span style="text-align:center; width:100%; color: #163eae; font-family:'Montserrat-Black'; text-transform:uppercase;">TSA BYLAWS</span>
-                                                                        <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light;" class="listServe2">Official documents governing the national organization.</p>
-                                                                        <br />
-                                                                        <a style="margin:0px; padding:0.5rem 2rem 0.5rem 2rem; width:100%;" class="btn btn-primary">More</a>
-                                                                        <hr />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <br />
-                                                            <div class="content">
-                                                                <div class="col-md-12 col-sm-12">
-                                                                    <div style="text-align:center">
-
-                                                                        <span style="text-align:center; width:100%; color: #163eae; font-family:'Montserrat-Black'; text-transform:uppercase;">OUR STORY</span>
-                                                                        <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light;" class="listServe2">230,000 middle and high school students nationwide aspire to be future engineers, scientists and technologists through the Technology Student Association.</p>
-                                                                        <br />
-                                                                        <a style="margin:0px; padding:0.5rem 2rem 0.5rem 2rem; width:100%;" class="btn btn-primary">More</a>
-                                                                        <hr />
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-12 col-sm-12">
-                                                                    <div style="text-align:center">
-
-                                                                        <span style="text-align:center; width:100%; color: #163eae; font-family:'Montserrat-Black'; text-transform:uppercase;">MISSION STATEMENT</span>
-                                                                        <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light;" class="listServe2">
-                                                                            Leadership and opportunities in technology, innovation, design and engineering. Members apply STEM (science, technology, engineering and mathematics) concepts through co-curricular
-                                                                            programs.
-                                                                        </p>
-                                                                        <br />
-                                                                        <a style="margin:0px; padding:0.5rem 2rem 0.5rem 2rem; width:100%;" class="btn btn-primary">More</a>
-                                                                        <hr />
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-12 col-sm-12">
-                                                                    <div style="text-align:center">
-
-                                                                        <span style="text-align:center; width:100%; color: #163eae; font-family:'Montserrat-Black'; text-transform:uppercase;">HISTORY</span>
-                                                                        <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light;" class="listServe2">For over 30 years, TSA has supported students and teachers dedicated to the advancement of technology education.</p>
-                                                                        <br />
-                                                                        <a style="margin:0px; padding:0.5rem 2rem 0.5rem 2rem; width:100%;" class="btn btn-primary">More</a>
-                                                                        <hr />
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-12 col-sm-12">
-                                                                    <div style="text-align:center">
-
-                                                                        <span style="text-align:center; width:100%; color: #163eae; font-family:'Montserrat-Black'; text-transform:uppercase;">MOTTO AND CREED</span>
-                                                                        <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light;" class="listServe2">Technology Student Association members are true champions of their motto and creed.</p>
-                                                                        <br />
-                                                                        <a style="margin:0px; padding:0.5rem 2rem 0.5rem 2rem; width:100%;" class="btn btn-primary">More</a>
-                                                                        <hr />
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                          {% if (((i-1) %% 4) == 0)%}
+                                                          </div>
+                                                          {% endif %}
+                                                          {% endif %}
                                                         </div>
                                                     </div>
                                                 </div>
