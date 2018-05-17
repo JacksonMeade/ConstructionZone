@@ -1154,7 +1154,7 @@
                                                     {% endfor %}
                                                   </div>
                                                    <div class="media-container-row content">
-                                                {% for post in site.posts where: "category","About" limit:4 offset:4 %}
+                                                {% for post in site.posts where: "category","About" limit:4 offset:3 %}
                                                 {% if post.category[0] == "About" %}
                                                 <div class="col-md-3 col-sm-4">
                                                     <a class="hovery" href="{{ post.permalink | absolute_url }}">
