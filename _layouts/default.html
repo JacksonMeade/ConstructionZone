@@ -75,12 +75,9 @@
                                                             </div>
                                                         </div>
                                                         <div class="footer3 section_3" id="footer3-7" style="height:inherit; width:100%; padding:1rem;">
-                                                          {% int i = 0; %}
-                                                          {% for post in site.posts %}
-                                                          {% if ((i < 9) && (post.category[0] == "About")) %}
-                                                          {% if ((i %% 4) == 0)%}
                                                             <div class="content">
-                                                          {% endif %}
+                                                          {% for post in site.posts limit:4 %}
+                                                          {% if post.category[0] == "About" %}
                                                                 <div class="col-md-12 col-sm-12">
                                                                     <div style="text-align:center">
 
@@ -91,10 +88,25 @@
                                                                         <hr />
                                                                     </div>
                                                                 </div>
-                                                          {% if (((i-1) %% 4) == 0)%}
+                                                              {% endif %}
+                                                            {% endfor %}
                                                           </div>
-                                                          {% endif %}
-                                                          {% endif %}
+                                                          <div class="content">
+                                                        {% for post in site.posts limit:4 offset:4 %}
+                                                        {% if post.category[0] == "About" %}
+                                                              <div class="col-md-12 col-sm-12">
+                                                                  <div style="text-align:center">
+
+                                                                      <span style="text-align:center; width:100%; color: #163eae; font-family:'Montserrat-Black'; text-transform:uppercase;">{{ post.title }}</span>
+                                                                      <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light;" class="listServe2">{{ post.blurb }}</p>
+                                                                      <br />
+                                                                      <a style="margin:0px; padding:0.5rem 2rem 0.5rem 2rem; width:100%;" class="btn btn-primary">More</a>
+                                                                      <hr />
+                                                                  </div>
+                                                              </div>
+                                                            {% endif %}
+                                                          {% endfor %}
+                                                        </div>
                                                         </div>
                                                     </div>
                                                 </div>
