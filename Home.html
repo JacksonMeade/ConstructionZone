@@ -323,7 +323,7 @@ layout: default
     <div style="padding:0px" class="container grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 0 }'>
 
 {% for post in site.posts %}
-{{% post.reviewImgUrl %}}
+
    {% if post.tags[0] == "featured" %}
         <!--Object Template-->
         <div class="col-md-4 grid-item" style="padding:1rem 1rem 2rem 1rem;">
@@ -346,6 +346,7 @@ layout: default
                         </h4>
                         <p class="custom-text custom-fonts-style align-left display-7" style="font-family:'Montserrat-Light'">
                             {{ post.excerpt }}
+                            {{ post.reviewImgUrl }}
                         </p>
                     </div>
                 </div>
