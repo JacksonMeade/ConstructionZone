@@ -1139,8 +1139,8 @@
                                                 </div>
                                                 <div class="footer3 section_3" id="footer3-7" style=" height:100%; width:100%; padding:1rem; background:rgb(235,235,235);">
                                                     <div class="media-container-row content">
-                                                  {% for post in site.posts where: "category","About" limit:4 %}
-                                                  {% if post.category[0] == "About" %}
+                                                  {% for post in site.posts where: "category","About" where limit:4 %}
+                                                  {% unless post.tags[0] == "special" %}
                                                   <div class="col-md-3 col-sm-4">
                                                       <a class="hovery" href="{{ post.permalink | absolute_url }}">
                                                         <div>
@@ -1150,12 +1150,12 @@
                                                           </div>
                                                           </a>
                                                         </div>
-                                                      {% endif %}
+                                                        {% endunless %}
                                                     {% endfor %}
                                                   </div>
                                                    <div class="media-container-row content">
                                                 {% for post in site.posts where: "category","About" limit:4 offset:3 %}
-                                                {% if post.category[0] == "About" %}
+                                                {% unless post.tags[0] == "special" %}
                                                 <div class="col-md-3 col-sm-4">
                                                     <a class="hovery" href="{{ post.permalink | absolute_url }}">
                                                       <div>
@@ -1165,7 +1165,7 @@
                                                           </a>
 
                                                     </div>
-                                                    {% endif %}
+                                                    {% endunless %}
                                                   {% endfor %}
                                                 </div>
                                             </div>
