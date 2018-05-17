@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Mission Statement"
 date: 2018-05-17 16:16:01 -0600
 category: [About]
