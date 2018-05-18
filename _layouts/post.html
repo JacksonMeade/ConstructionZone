@@ -39,7 +39,7 @@ layout: default
               <div  style="float:left; width: 35%; height: auto; margin: 10px; padding: 1rem; background-color: #e5e5e5;">
                 {% if ((page.featuredLinks != null) %}
                   {% for link in featuredLinks %}
-                    <a href="{ page.featuredLinks_Urls[forloop.index] }">link</a>
+                    <a href="{ page.featuredLinks_Urls[forloop.index] }">{ link }</a>
                   {% endfor %}
                 {% endif  %}
                 {% if ((page.featuredFiles != null) %}
