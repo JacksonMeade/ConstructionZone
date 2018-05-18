@@ -34,10 +34,17 @@ layout: default
 
     <div class="container" style="background:none;">
         <div class="media-container-row" style="padding-top:3rem; padding-bottom:5rem; background:white; box-shadow: 0px 0px 8px rgba(20,20,20,0.5);">
-            <div class="mbr-text col-8 col-md-8 mbr-fonts-style display-7">
-              {% if (page.featuredLinks != null) %}
-              <div  style="float:left; width: 35%; height: auto; margin: 10px; padding: 2rem; background-color: #e5e5e5;">
-                Blahblahbl djjker hvijke jfksbfhejej
+            <div class="mbr-text col-11 col-md-11 mbr-fonts-style display-7">
+              {% if ((page.featuredLinks != null) || (page.featuredFiles != null) %}
+              <div  style="float:left; width: 35%; height: auto; margin: 10px; padding: 1rem; background-color: #e5e5e5;">
+                {% if ((page.featuredLinks != null) %}
+                  {% for link in featuredLinks %}
+                    <a href="{ page.featuredLinks_Urls[forloop.index] }">link</a>
+                  {% endfor %}
+                {% endif  %}
+                {% if ((page.featuredFiles != null) %}
+
+                {% endif  %}
               </div>
               {% endif %}
                 {{ content }}
