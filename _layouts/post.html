@@ -39,15 +39,17 @@ layout: default
               <div  style="float:right; width: 35%; height: auto; margin: 10px; padding: 1rem; background-color: #e5e5e5;">
                 {% if ((page.featuredLinks != null) %}
                 <h3>Related Links</h3>
-                  {% for link in page.featuredLinks %}
-                    <a href="{{ page.featuredLinks_Urls[forloop.index] }}">{{ link }}</a>
-                  {% endfor %}
+                  <ul>{% for link in page.featuredLinks %}
+                    <li><a href="{{ page.featuredLinks_Urls[forloop.index] }}">{{ link }}</a></li>
+                  {% endfor %}</ul>
                 {% endif  %}
                 {% if ((page.featuredFiles != null) %}
+                <br>
+                <br>
                 <h3>Important Files</h3>
-                {% for file in page.featuredFiles %}
-                  <a href="{{ page.featuredFiles_Urls[forloop.index] }}">{{ file }}</a>
-                {% endfor %}
+                <ul>{% for file in page.featuredFiles %}
+                  <li><a href="{{ page.featuredFiles_Urls[forloop.index] }}">{{ file }}</a></li>
+                {% endfor %}</ul>
                 {% endif  %}
               </div>
               {% endif %}
