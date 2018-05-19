@@ -39,8 +39,8 @@ layout: default
               <div  style="float:right; width: 35%; height: auto; margin: 10px; padding: 1rem; background-color: #e5e5e5;">
                 {% if ((page.featuredLinks != null) %}
                 <h3>Related Links</h3>
-                  <ul style="list-style-image:url('assets/images/link.png');">{% for link in page.featuredLinks %}
-                    <li><a href="{{ page.featuredLinks_Urls[forloop.index] }}">{{ link }}</a></li>
+                  <ul>{% for link in page.featuredLinks %}
+                    <li style="list-style-image:url('assets/images/link.png');"><a href="{{ page.featuredLinks_Urls[forloop.index] }}">{{ link }}</a></li>
                   {% endfor %}</ul>
                 {% endif  %}
                 {% if ((page.featuredFiles != null) %}
