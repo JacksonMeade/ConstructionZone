@@ -38,13 +38,13 @@ layout: default
               {% if ((page.featuredLinks != null) || (page.featuredFiles != null) %}
               <div  style="float:right; width: 35%; height: auto; margin: 10px; padding: 1rem; background-color: #e5e5e5;">
                 {% if ((page.featuredLinks != null) %}
-                <h3>Related Links</h3>
-                  <ul>{% for link in page.featuredLinks %}
-                    <li style="list-style-image:url('assets/images/link.png');"><a href="{{ page.featuredLinks_Urls[forloop.index] }}">{{ link }}</a></li>
+                <h3 class="align-center">Related Links</h3><hr/>
+                  <ul style="list-style-type:none;">{% for link in page.featuredLinks %}
+                    <li><a href="{{ page.featuredLinks_Urls[forloop.index] }}">{{ link }}</a></li>
                   {% endfor %}</ul>
                 {% endif  %}
                 {% if ((page.featuredFiles != null) %}
-                <h3>Important Files</h3>
+                <h3 class="align-center">Important Files</h3><hr/>
                 <ul style="list-style-type:none;">{% for file in page.featuredFiles %}
                   <li><a href="{{ page.featuredFiles_Urls[forloop.index] }}">{{ file }}</a></li>
                 {% endfor %}</ul>
