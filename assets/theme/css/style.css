@@ -9,7 +9,7 @@ section,
 .container,
 .container-fluid {
   position: relative;
-  word-wrap: break-word; }
+ }
 
 a.custom-iconfont:hover {
   text-decoration: none; }
@@ -33,9 +33,7 @@ body {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6,
 .display-1, .display-2, .display-3, .display-4 {
-  line-height: 1;
-  word-break: break-word;
-  word-wrap: break-word; }
+  line-height: 1; }
 
 b, strong {
   font-weight: bold; }
