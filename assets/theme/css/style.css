@@ -11,6 +11,10 @@ section,
   position: relative;
  }
 
+ .linkList {
+    list-style-image: url(../../../assets/images/link.png);
+ }
+
 a.custom-iconfont:hover {
   text-decoration: none; }
 
