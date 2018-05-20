@@ -38,7 +38,7 @@ layout: default
                 {% if ((page.featuredLinks != null) %}
                 <h3 class="align-center">Related Links</h3><hr/>
                   <ul>{% for link in page.featuredLinks %}
-                    <a style="color:inherit;font-family:inherit;" href="{{ page.featuredLinks_Urls[forloop.index] }}"><li class="linkList">{{ link }}</li></a>
+                    <a class="btn btn-success-outline" href="{{ page.featuredLinks_Urls[forloop.index] }}"><li class="linkList">{{ link }}</li></a>
                   {% endfor %}</ul>
                 {% endif  %}
                 {% if ((page.featuredFiles != null) %}
