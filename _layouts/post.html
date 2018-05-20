@@ -37,8 +37,8 @@ layout: default
               <div class="col-md-4 col-sm-12 mover" style="float:right;  height: auto; margin: 10px; padding: 1rem; background-color: #e5e5e5;">
                 {% if ((page.featuredLinks != null) %}
                 <h3 class="align-center">Related Links</h3><hr/>
-                  <ul class="linkList">{% for link in page.featuredLinks %}
-                    <li class="linkListness"><a href="{{ page.featuredLinks_Urls[forloop.index] }}">{{ link }}</a></li>
+                  <ul>{% for link in page.featuredLinks %}
+                    <li class="linkList"><a href="{{ page.featuredLinks_Urls[forloop.index] }}">{{ link }}</a></li>
                   {% endfor %}</ul>
                 {% endif  %}
                 {% if ((page.featuredFiles != null) %}
