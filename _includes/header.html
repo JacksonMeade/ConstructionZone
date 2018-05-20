@@ -29,8 +29,19 @@
 
     <style>
 
+        .linklist::before {
+          display:inline-block;
+          height:10px;
+          width:auto;
+          background-size:10px;
+          background-image: url("../../Constructory/assets/images/link.png") !important;
+          background-repeat: no-repeat;
+          margin-right:50px;
+        }
+
         .linkList {
-          list-style-image: url("../../Constructory/assets/images/link.png") !important;
+          list-style-type: none;
+          /*list-style-image: url("../../Constructory/assets/images/link.png") !important;*/
         }
 
         @media(min-width:768px) {
