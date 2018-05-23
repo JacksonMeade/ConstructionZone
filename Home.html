@@ -9,7 +9,7 @@ title: "Home"
         <div class="custom-slider slide carousel" data-pause="true" data-keyboard="false" data-ride="carousel" data-interval="8000">
             <ol class="carousel-indicators">
               {% for post in site.posts %}
-              {% if tags[0] == "jumbotron" %}
+              {% if post.tags[0] == "jumbotron" %}
                 {% if (forloop.first) %}
                 <li data-app-prevent-settings="" data-target="#slider1-4" class="active" data-slide-to="{% forloop.index0 %}"></li>
                 {% else %}
@@ -20,7 +20,7 @@ title: "Home"
             </ol>
             <div class="carousel-inner" role="listbox">
               {% for post in site.posts %}
-              {% if tags[0] == "jumbotron" %}
+              {% if post.tags[0] == "jumbotron" %}
                 {% if (forloop.first) %}
                 <div class="carousel-item slider-fullscreen-image active" data-bg-video-slide="false" style="min-height:74vh !important; background-image: url({{ post.reviewImgUrl | absolute_url }});">
                     <div class="container container-slide" style="min-height:74vh !important;">
