@@ -7,7 +7,7 @@
 
       for (var i = 0; i < results.length; i++) {  // Iterate over the results
         var item = store[results[i].ref];
-        if (item.reviewImgUrl == null) {
+        if (item.reviewImgUrl) {
           appendString += '<a href="' + item.url + '"><div class="row hover-shadow"><div class="col-12"><h3>' + item.title + '</h3><p style="color:black;">' + item.content.substring(0, 250) + '...</p></div></div></a>';
         }
         else {
