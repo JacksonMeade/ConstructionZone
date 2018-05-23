@@ -17,9 +17,9 @@
     }
   }
 
-  function getQueryVariable(variable) {
-    var query = window.location.search.substring(1);
-    var vars = query.split('&');
+  function getQVariable(variable) {
+    var q = window.location.search.substring(1);
+    var vars = q.split('&');
 
     for (var i = 0; i < vars.length; i++) {
       var pair = vars[i].split('=');
@@ -30,7 +30,7 @@
     }
   }
 
-  var searchTerm = getQueryVariable('query');
+  var searchTerm = getQVariable('q');
 
   if (searchTerm) {
     document.getElementById('search-box').setAttribute("value", searchTerm);
