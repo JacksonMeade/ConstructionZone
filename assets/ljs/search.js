@@ -16,7 +16,7 @@
       }
       searchResults.innerHTML = appendString;
     } else {
-      searchResults.innerHTML = '<div style="background: #f2f2f2; margin-bottom: 1rem; padding: 1rem;"><div class="user row"><div class="col-lg-3 col-md-4"></div><h1 class="testimonials-caption col-lg-9 col-md-8"><div class="user_name custom-bold custom-fonts-style align-left pt-3 display-7">Oops.</h1><div class="user_desk custom-light custom-fonts-style align-left pt-2 display-7">Sorry, we couldn&apos;t find anything matching that description.</div></div></div></div>';
+      searchResults.innerHTML = '<div style="background: #f2f2f2; margin-bottom: 1rem; padding: 1rem;"><div class="user row"><h1 class="testimonials-caption col-12"><div class="user_name custom-bold custom-fonts-style align-left pt-3 display-7">Oops.</div></h1><p class="user_desk custom-light custom-fonts-style align-left pt-2 display-7" style="margin-left: 1rem;">Sorry, we couldn&apos;t find anything matching that description.</p></div></div></div></div>';
     }
   }
 
