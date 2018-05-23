@@ -8,12 +8,12 @@ title: "Home"
     <div class="full-screen">
         <div class="custom-slider slide carousel" data-pause="true" data-keyboard="false" data-ride="carousel" data-interval="8000">
             <ol class="carousel-indicators">
-              {% for post in site.posts where: "tags","jumbotron" %}
+              {% for post in site.posts where: "tags[0]","jumbotron" %}
                 <li data-app-prevent-settings="" data-target="#slider1-4" data-slide-to="{{ forloop.index }}" class=""></li>
               {% endfor %}
             </ol>
             <div class="carousel-inner" role="listbox">
-              {% for post in site.posts where: "tags","jumbotron" %}
+              {% for post in site.posts where: "tags[0]","jumbotron" %}
                 <div class="carousel-item slider-fullscreen-image active" data-bg-video-slide="false" style="min-height:74vh !important; background-image: url({{ post.reviewImgUrl | absolute_url }});">
                     <div class="container container-slide" style="min-height:74vh !important;">
                         <div class="image_wrapper">
