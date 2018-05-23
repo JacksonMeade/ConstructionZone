@@ -8,25 +8,25 @@ title: "Home"
     <div class="full-screen">
         <div class="custom-slider slide carousel" data-pause="true" data-keyboard="false" data-ride="carousel" data-interval="8000">
             <ol class="carousel-indicators">
-                <li data-app-prevent-settings="" data-target="#slider1-4" class="active" data-slide-to="0"></li>
-                <li data-app-prevent-settings="" data-target="#slider1-4" data-slide-to="1" class=""></li>
-                <li data-app-prevent-settings="" data-target="#slider1-4" data-slide-to="2" class=""></li>
-                <li data-app-prevent-settings="" data-target="#slider1-4" data-slide-to="3" class=""></li>
+              {% for post in site.posts where: "category","jumbotron" %}
+                <li data-app-prevent-settings="" data-target="#slider1-4" data-slide-to="{{ forloop.index }}" class=""></li>
+              {% endfor %}
             </ol>
             <div class="carousel-inner" role="listbox">
-                <div class="carousel-item slider-fullscreen-image active" data-bg-video-slide="false" style="min-height:74vh !important; background-image: url(assets/images/our-story-368x256.jpg);">
+              {% for post in site.posts where: "category","jumbotron" %}
+                <div class="carousel-item slider-fullscreen-image active" data-bg-video-slide="false" style="min-height:74vh !important; background-image: url({{ post.reviewImgUrl | absolute_url }});">
                     <div class="container container-slide" style="min-height:74vh !important;">
                         <div class="image_wrapper">
                             <div class="col-sm-12 col-md-5" style="background: rgba(0, 0, 0, 0.8);bottom: 0;left: 0;opacity: 1;position: absolute;right: 0;top: 0;z-index: 1;">
 
                                 <div class="carousel-caption justify-content-left align-left" style="color: #fff; padding:10% 5% 10% 5%; height:100%">
                                     <div class="align-left" style="max-height:80%;">
-                                        <h2 class="custom-fonts-style display-1" style="font-family:'Montserrat-Black';">OUR<br />STORY</h2>
+                                        <h2 class="custom-fonts-style display-1" style="font-family:'Montserrat-Black';">{{ post.title }}</h2>
                                         <p style="font-family:'Open Sans'" class="custom-text custom-fonts-style display-4">
-                                            Over 250,000 middle and high school students nationwide aspire to be future engineers, scientists and technologists through the Technology Student Association.
+                                            {{ post.blurb }}
                                         </p>
                                         <div class="custom-section-btn" buttons="0">
-                                            <a class="btn  btn-primary display-4" href="#" style="font-family:'Montserrat-ExtraBold';font-size:1.2rem;padding-top:2rem; padding-bottom:2rem; width:100%; margin-left:0px !important">LEARN MORE</a>
+                                            <a class="btn  btn-primary display-4" href="{{ post.permalink | absolute_url }}" style="font-family:'Montserrat-ExtraBold';font-size:1.2rem;padding-top:2rem; padding-bottom:2rem; width:100%; margin-left:0px !important">LEARN MORE</a>
 
                                         </div>
                                         <hr style="border:1px solid white;">
@@ -70,175 +70,8 @@ title: "Home"
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="min-height:74vh !important; background-image: url(assets/images/tsa-facts-370x256.jpg);">
-                    <div class="container container-slide" style="min-height:74vh !important;">
-                        <div class="image_wrapper">
-                            <div class="col-sm-12 col-md-5" style="background: rgba(0, 0, 0, 0.8);bottom: 0;left: 0;opacity: 1;position: absolute;right: 0;top: 0;z-index: 1;">
-
-                                <div class="carousel-caption justify-content-left align-left" style="color: #fff; padding:10% 5% 10% 5%; height:100%">
-                                    <div class="align-left" style="max-height:80%;">
-                                        <h2 class="custom-fonts-style display-1" style="font-family:'Montserrat-Black';">TSA<br />FACTS</h2>
-                                        <p style="font-family:'Open Sans'" class="custom-text custom-fonts-style display-4">
-                                            The who, what, when, where, why and how. Stats, data and information about TSA.
-                                        </p>
-                                        <div class="custom-section-btn" buttons="0">
-                                            <a class="btn btn-primary display-4" href="#" style="font-family:'Montserrat-ExtraBold';font-size:1.2rem;padding-top:2rem; padding-bottom:2rem; width:100%; margin-left:0px !important">LEARN MORE</a>
-
-                                        </div>
-                                        <hr style="border:1px solid white;">
-                                        <div style="background-position: 50% 50%;background-repeat: no-repeat;background-size: cover;padding-top: 0.25rem;padding-bottom: 2rem;position:relative;color:white;">
-                                            <div class="container">
-                                                <div class="media-container-row align-center custom-white">
-                                                    <div class="row social-row">
-                                                        <div style="flex-direction:row;padding-left: 0;margin-bottom: 0;list-style: none;display: flex;flex-wrap: wrap;justify-content: flex-end;" class="social-list align-right pb-2">
-
-                                                            <div class="soc-item" style="margin: 0 .5rem;">
-                                                                <a href="#" target="_blank">
-                                                                    <span class="custom-iconfont custom-iconfont-social customib-info" style=" color: rgb(255, 255, 255);"></span>
-                                                                </a>
-                                                            </div>
-
-                                                            <div class="soc-item" style="margin: 0 .5rem;">
-                                                                <a href="#" target="_blank">
-                                                                    <span class="custom-iconfont custom-iconfont-social socicon-twitter socicon" style="color: rgb(255, 255, 255);"></span>
-                                                                </a>
-                                                            </div>
-
-                                                            <div class="soc-item" style="margin: 0 .5rem;">
-                                                                <a href="#" target="_blank">
-                                                                    <span class="custom-iconfont custom-iconfont-social socicon-youtube socicon" style="color: rgb(255, 255, 255);"></span>
-                                                                </a>
-                                                            </div>
-
-                                                            <div class="soc-item" style="margin: 0 .5rem;">
-                                                                <a href="#" target="_blank">
-                                                                    <span class="custom-iconfont custom-iconfont-social socicon-facebook socicon" style="color: rgb(255, 255, 255);"></span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="min-height:74vh !important; background-image: url(assets/images/tsaTeam.jpg);">
-                    <div class="container container-slide" style="min-height:74vh !important;">
-                        <div class="image_wrapper">
-                            <div class="col-sm-12 col-md-5" style="background: rgba(0, 0, 0, 0.8);bottom: 0;left: 0;opacity: 1;position: absolute;right: 0;top: 0;z-index: 1;">
-
-                                <div class="carousel-caption justify-content-left align-left" style="color: #fff; padding:10% 5% 10% 5%; height:100%">
-                                    <div class="align-left" style="max-height:80%;">
-                                        <h2 class="custom-fonts-style display-1" style="font-family:'Montserrat-Black';">OUR<br />MISSION</h2>
-                                        <p style="font-family:'Open Sans'" class="custom-text custom-fonts-style display-4">
-                                            Leadership and opportunities in technology, innovation, design and engineering. Members apply STEM concepts through intracurricular programs.
-                                        </p>
-                                        <div class="custom-section-btn" buttons="0">
-                                            <a class="btn  btn-primary display-4" href="#" style="font-family:'Montserrat-ExtraBold';font-size:1.2rem;padding-top:2rem; padding-bottom:2rem; width:100%; margin-left:0px !important">LEARN MORE</a>
-
-                                        </div>
-                                        <hr style="border:1px solid white;">
-                                        <div style="background-position: 50% 50%;background-repeat: no-repeat;background-size: cover;padding-top: 0.25rem;padding-bottom: 2rem;position:relative;color:white;">
-                                            <div class="container">
-                                                <div class="media-container-row align-center custom-white">
-                                                    <div class="row social-row">
-                                                        <div style="flex-direction:row;padding-left: 0;margin-bottom: 0;list-style: none;display: flex;flex-wrap: wrap;justify-content: flex-end;" class="social-list align-right pb-2">
-
-                                                            <div class="soc-item" style="margin: 0 .5rem;">
-                                                                <a href="#" target="_blank">
-                                                                    <span class="custom-iconfont custom-iconfont-social customib-info" style=" color: rgb(255, 255, 255);"></span>
-                                                                </a>
-                                                            </div>
-
-                                                            <div class="soc-item" style="margin: 0 .5rem;">
-                                                                <a href="#" target="_blank">
-                                                                    <span class="custom-iconfont custom-iconfont-social socicon-twitter socicon" style="color: rgb(255, 255, 255);"></span>
-                                                                </a>
-                                                            </div>
-
-                                                            <div class="soc-item" style="margin: 0 .5rem;">
-                                                                <a href="#" target="_blank">
-                                                                    <span class="custom-iconfont custom-iconfont-social socicon-youtube socicon" style="color: rgb(255, 255, 255);"></span>
-                                                                </a>
-                                                            </div>
-
-                                                            <div class="soc-item" style="margin: 0 .5rem;">
-                                                                <a href="#" target="_blank">
-                                                                    <span class="custom-iconfont custom-iconfont-social socicon-facebook socicon" style="color: rgb(255, 255, 255);"></span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="min-height:74vh !important; background-image: url(assets/images/mott-creed-364x259.jpg);">
-                    <div class="container container-slide" style="min-height:74vh !important;">
-                        <div class="image_wrapper">
-                            <div class="col-sm-12 col-md-5" style="background: rgba(0, 0, 0, 0.8);bottom: 0;left: 0;opacity: 1;position: absolute;right: 0;top: 0;z-index: 1;">
-
-                                <div class="carousel-caption justify-content-left align-left" style="color: #fff; padding:10% 5% 10% 5%; height:100%">
-                                    <div class="align-left" style="max-height:80%;">
-                                        <h2 class="custom-fonts-style display-1" style="font-family:'Montserrat-Black';">MOTTO<br />& CREED</h2>
-                                        <p style="font-family:'Open Sans'" class="custom-text custom-fonts-style display-4">
-                                            Technology Student Association members are true champions of their motto and creed.
-                                        </p>
-                                        <div class="custom-section-btn" buttons="0">
-                                            <a class="btn  btn-primary display-4" href="#" style="font-family:'Montserrat-ExtraBold';font-size:1.2rem;padding-top:2rem; padding-bottom:2rem; width:100%; margin-left:0px !important">LEARN MORE</a>
-
-                                        </div>
-                                        <hr style="border:1px solid white;">
-                                        <div style="background-position: 50% 50%;background-repeat: no-repeat;background-size: cover;padding-top: 0.25rem;padding-bottom: 2rem;position:relative;color:white;">
-                                            <div class="container">
-                                                <div class="media-container-row align-center custom-white">
-                                                    <div class="row social-row">
-                                                        <div style="flex-direction:row;padding-left: 0;margin-bottom: 0;list-style: none;display: flex;flex-wrap: wrap;justify-content: flex-end;" class="social-list align-right pb-2">
-
-                                                            <div class="soc-item" style="margin: 0 .5rem;">
-                                                                <a href="#" target="_blank">
-                                                                    <span class="custom-iconfont custom-iconfont-social customib-info" style=" color: rgb(255, 255, 255);"></span>
-                                                                </a>
-                                                            </div>
-
-                                                            <div class="soc-item" style="margin: 0 .5rem;">
-                                                                <a href="#" target="_blank">
-                                                                    <span class="custom-iconfont custom-iconfont-social socicon-twitter socicon" style="color: rgb(255, 255, 255);"></span>
-                                                                </a>
-                                                            </div>
-
-                                                            <div class="soc-item" style="margin: 0 .5rem;">
-                                                                <a href="#" target="_blank">
-                                                                    <span class="custom-iconfont custom-iconfont-social socicon-youtube socicon" style="color: rgb(255, 255, 255);"></span>
-                                                                </a>
-                                                            </div>
-
-                                                            <div class="soc-item" style="margin: 0 .5rem;">
-                                                                <a href="#" target="_blank">
-                                                                    <span class="custom-iconfont custom-iconfont-social socicon-facebook socicon" style="color: rgb(255, 255, 255);"></span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+{% endfor %}
+</div>
         </div>
     </div>
 
