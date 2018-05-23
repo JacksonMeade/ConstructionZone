@@ -3,7 +3,8 @@
  * Copyright 2017 official
  */
 section {
-  background-color: #eeeeee; }
+  background-color: #eeeeee;
+}
 
 section,
 .container,
@@ -12,11 +13,12 @@ section,
  }
 
  .linkList {
-    list-style-image: url(../../../assets/images/link.png);
+    list-style-image: url('../../../assets/images/link.png');
  }
 
 a.custom-iconfont:hover {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 .article .lead p, .article .lead ul, .article .lead ol, .article .lead pre, .article .lead blockquote {
   margin-bottom: 0; }
@@ -54,10 +56,12 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   transition-property: background-color, color; }
 
 textarea[type="hidden"] {
-  display: none; }
+  display: none;
+}
 
 body {
-  position: relative; }
+  position: relative;
+}
 
 section {
   background-position: 50% 50%;
@@ -75,11 +79,13 @@ section {
   visibility: hidden; }
 
 .custom-z-index20 {
-  z-index: 20; }
+  z-index: 20;
+}
 
 /*! Base colors */
 .custom-white {
-  color: #ffffff; }
+  color: #ffffff;
+}
 
 .custom-black {
   color: #000000; }
