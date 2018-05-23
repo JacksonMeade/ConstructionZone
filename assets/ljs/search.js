@@ -8,10 +8,10 @@
       for (var i = 0; i < results.length; i++) {  // Iterate over the results
         var item = store[results[i].ref];
         if (item.reviewImgUrl == null) {
-          appendString += '<a href="' + item.url + '"><div class="col-md-12 testimonials-container" id="search-results"><div class="row hover-shadow"><div class="col-12"><h3>' + item.title + '</h3><p style="color:black;">' + item.content.substring(0, 250) + '...</p></div></div></div></a>';
+          appendString += '<a href="' + item.url + '"><div class="row hover-shadow"><div class="col-12"><h3>' + item.title + '</h3><p style="color:black;">' + item.content.substring(0, 250) + '...</p></div></div></a>';
         }
         else {
-          appendString += '<a href="' + item.url + '"><div class="col-md-12 testimonials-container" id="search-results"><div class="row hover-shadow"><div class="col-md-3 col-sm-12"><img style="width: 100%;" src="' + item.reviewImgUrl + '"></div><div class="col-md-9 col-sm-12"><h3>' + item.title + '</h3><p style="color:black;">' + item.content.substring(0,250) + '...</p></div></div></div></a>';
+          appendString += '<a href="' + item.url + '"><div class="row hover-shadow"><div class="col-md-3 col-sm-12"><img style="width: 100%;" src="' + item.reviewImgUrl + '"></div><div class="col-md-9 col-sm-12"><h3>' + item.title + '</h3><p style="color:black;">' + item.content.substring(0,250) + '...</p></div></div></a>';
         }
       }
       searchResults.innerHTML = appendString;
