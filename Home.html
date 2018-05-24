@@ -8,7 +8,6 @@ title: "Home"
     <div class="full-screen">
         <div class="custom-slider slide carousel" data-pause="true" data-keyboard="false" data-ride="carousel" data-interval="8000">
             <ol class="carousel-indicators">
-              {% raw %}
               {% for post in site.posts %}
               {% if post.tags[0] == "jumbotron" %}
                 {% if (forloop.first) %}
@@ -18,7 +17,6 @@ title: "Home"
                 {% endif %}
               {% endif %}
               {% endfor %}
-              {% endraw %}
             </ol>
             <div class="carousel-inner" role="listbox">
 
