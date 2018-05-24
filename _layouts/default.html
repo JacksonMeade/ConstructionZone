@@ -1144,7 +1144,8 @@
                                                 </div>
                                                 <div class="footer3 section_3" id="footer3-7" style=" height:100%; width:100%; padding:1rem; background:rgb(235,235,235);">
                                                     <div class="media-container-row content">
-                                                  {% for post in site.posts where: "category","About" limit:4 %}
+                                                  {% assign sorted-posts = site.posts | where: "category","About" %}
+                                                  {% for post in sorted-posts limit:4 %}
                                                   {% unless post.tags[0] == "special" %}
                                                   <div class="col-md-3 col-sm-4">
                                                       <a class="hovery" href="{{ post.permalink | absolute_url }}">
@@ -1159,7 +1160,7 @@
                                                     {% endfor %}
                                                   </div>
                                                    <div class="media-container-row content">
-                                                {% for post in site.posts where: "category","About" limit:4 offset:3 %}
+                                                {% for post in sorted-posts limit:4 offset:3 %}
                                                 {% unless post.tags[0] == "special" %}
                                                 <div class="col-md-3 col-sm-4">
                                                     <a class="hovery" href="{{ post.permalink | absolute_url }}">
@@ -1825,7 +1826,7 @@
 
                                                             </div>
                                                         </div>
-                                                        {% for post in site.posts where: "category","About" limit:4 %}
+                                                        {% for post in site.posts where: "category","About" limit:3 %}
                                                         {% unless post.tags[0] == "special" %}
                                                         <div class="col-md-3 col-sm-4">
                                                             <a class="hovery" href="{{ post.permalink | absolute_url }}">
@@ -1840,7 +1841,7 @@
                                                           {% endfor %}
                                                         </div>
                                                          <div class="media-container-row content">
-                                                      {% for post in site.posts where: "category","About" limit:4 offset:3 %}
+                                                      {% for post in site.posts where: "category","About" limit:4 offset:2 %}
                                                       {% unless post.tags[0] == "special" %}
                                                       <div class="col-md-3 col-sm-4">
                                                           <a class="hovery" href="{{ post.permalink | absolute_url }}">
