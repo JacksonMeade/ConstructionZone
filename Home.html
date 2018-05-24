@@ -11,9 +11,9 @@ title: "Home"
               {% for post in site.posts %}
               {% if post.tags[0] == "jumbotron" %}
                 {% if (forloop.first) %}
-                <li data-app-prevent-settings="" data-target="#slider1-4" class="active" data-slide-to="{% forloop.index0 %}"></li>
+                <li data-app-prevent-settings="" data-target="#slider1-4" class="active" data-slide-to="{% forloop.index %}"></li>
                 {% else %}
-                <li data-app-prevent-settings="" data-target="#slider1-4" data-slide-to="{% forloop.index0 %}" class=""></li>
+                <li data-app-prevent-settings="" data-target="#slider1-4" data-slide-to="{% forloop.index %}" class=""></li>
                 {% endif %}
               {% endif %}
               {% endfor %}
