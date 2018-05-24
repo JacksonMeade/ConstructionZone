@@ -10,15 +10,23 @@ title: "Home"
             <ol class="carousel-indicators">
               {% assign sorted-posts = site.posts | where: "tag","jumbotron" %}
               {% for post in sorted-posts %}
+              {% if (forloop.first) %}
+                <li data-app-prevent-settings="" data-target="#slider1-4" data-slide-to="{{ forloop.index0 }}" class="active"></li>
+                {% else %}
                 <li data-app-prevent-settings="" data-target="#slider1-4" data-slide-to="{{ forloop.index0 }}" class=""></li>
+                {% endif %}
               {% endfor %}
 
             </ol>
             <div class="carousel-inner" role="listbox">
-              
+
               {% assign sorted-posts = site.posts | where: "tag","jumbotron" %}
               {% for post in sorted-posts %}
+                {% if (forloop.first) %}
+                <div class="carousel-item slider-fullscreen-image active" data-bg-video-slide="false" style="min-height:74vh !important; background-image: url({{ post.reviewImgUrl | absolute_url }});">
+                {% else %}
                 <div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="min-height:74vh !important; background-image: url({{ post.reviewImgUrl | absolute_url }});">
+                {% endif %}
                     <div class="container container-slide" style="min-height:74vh !important;">
                       <div class="image_wrapper">
                           <div class="col-sm-12 col-md-5" style="background: rgba(0, 0, 0, 0.8);bottom: 0;left: 0;opacity: 1;position: absolute;right: 0;top: 0;z-index: 1;">
