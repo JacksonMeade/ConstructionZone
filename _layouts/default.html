@@ -1321,7 +1321,8 @@
                                                 </div>
                                                 <div class="footer3 section_3" id="footer3-7" style=" height:100%; width:100%; padding:1rem; background:rgb(235,235,235);">
                                                     <div class="media-container-row content">
-                                                      {% for post in site.posts where: "category","Competitions" limit:4 %}
+                                                      {% assign sorted-posts = site.posts | where: "category","Competitions" %}
+                                                      {% for post in sorted-posts limit:4 %}
                                                       {% unless post.tags[0] == "special" %}
                                                       <div class="col-md-3 col-sm-4">
                                                           <a class="hovery" href="{{ post.permalink | absolute_url }}">
@@ -1336,7 +1337,7 @@
                                                         {% endfor %}
                                                       </div>
                                                        <div class="media-container-row content">
-                                                    {% for post in site.posts where: "category","Competitions" limit:4 offset:3 %}
+                                                    {% for post in sorted-posts" limit:4 offset:3 %}
                                                     {% unless post.tags[0] == "special" %}
                                                     <div class="col-md-3 col-sm-4">
                                                         <a class="hovery" href="{{ post.permalink | absolute_url }}">
@@ -1407,7 +1408,8 @@
                                                 </div>
                                                 <div class="footer3 section_3" id="footer3-7" style=" height:100%; width:100%; padding:1rem; background:rgb(235,235,235);">
                                                     <div class="media-container-row content">
-                                                      {% for post in site.posts where: "category","Leadership" limit:4 %}
+                                                      {% assign sorted-posts = site.posts | where: "category","Leadership" %}
+                                                      {% for post in sorted-posts limit:4 %}
                                                       {% unless post.tags[0] == "special" %}
                                                       <div class="col-md-3 col-sm-4">
                                                           <a class="hovery" href="{{ post.permalink | absolute_url }}">
@@ -1422,7 +1424,7 @@
                                                         {% endfor %}
                                                       </div>
                                                        <div class="media-container-row content">
-                                                    {% for post in site.posts where: "category","Leadership" limit:4 offset:3 %}
+                                                    {% for post in sorted-posts" limit:4 offset:3 %}
                                                     {% unless post.tags[0] == "special" %}
                                                     <div class="col-md-3 col-sm-4">
                                                         <a class="hovery" href="{{ post.permalink | absolute_url }}">
@@ -1501,7 +1503,8 @@
 
                                                     <div class="media-container-row content">
 
-                                                      {% for post in site.posts where: "category","Events" limit:4 %}
+                                                      {% assign sorted-posts = site.posts | where: "category","Events" %}
+                                                      {% for post in sorted-posts limit:4 %}
                                                       {% unless post.tags[0] == "special" %}
                                                       <div class="col-md-3 col-sm-4">
                                                           <a class="hovery" href="{{ post.permalink | absolute_url }}">
@@ -1516,7 +1519,7 @@
                                                         {% endfor %}
                                                       </div>
                                                        <div class="media-container-row content">
-                                                    {% for post in site.posts where: "category","Events" limit:4 offset:3 %}
+                                                    {% for post in sorted-posts" limit:4 offset:3 %}
                                                     {% unless post.tags[0] == "special" %}
                                                     <div class="col-md-3 col-sm-4">
                                                         <a class="hovery" href="{{ post.permalink | absolute_url }}">
@@ -1604,11 +1607,12 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!--Default Dropdown-->
+
                                                 <div class="footer3 section_3" id="footer3-7" style=" height:100%; width:100%; padding:1rem; background:rgb(235,235,235);">
 
                                                     <div class="media-container-row content">
-                                                      {% for post in site.posts where: "category","Students" limit:4 %}
+                                                      {% assign sorted-posts = site.posts | where: "category","Students" %}
+                                                      {% for post in sorted-posts limit:4 %}
                                                       {% unless post.tags[0] == "special" %}
                                                       <div class="col-md-3 col-sm-4">
                                                           <a class="hovery" href="{{ post.permalink | absolute_url }}">
@@ -1623,7 +1627,7 @@
                                                         {% endfor %}
                                                       </div>
                                                        <div class="media-container-row content">
-                                                    {% for post in site.posts where: "category","Students" limit:4 offset:3 %}
+                                                    {% for post in sorted-posts" limit:4 offset:3 %}
                                                     {% unless post.tags[0] == "special" %}
                                                     <div class="col-md-3 col-sm-4">
                                                         <a class="hovery" href="{{ post.permalink | absolute_url }}">
@@ -1716,7 +1720,8 @@
                                                 <div class="footer3 section_3" id="footer3-7" style=" height:100%; width:100%; padding:1rem; background:rgb(235,235,235);">
 
                                                     <div class="media-container-row content">
-                                                      {% for post in site.posts where: "category","Adults" limit:4 %}
+                                                      {% assign sorted-posts = site.posts | where: "category","Adults" %}
+                                                      {% for post in sorted-posts limit:4 %}
                                                       {% unless post.tags[0] == "special" %}
                                                       <div class="col-md-3 col-sm-4">
                                                           <a class="hovery" href="{{ post.permalink | absolute_url }}">
@@ -1731,7 +1736,7 @@
                                                         {% endfor %}
                                                       </div>
                                                        <div class="media-container-row content">
-                                                    {% for post in site.posts where: "category","Adults" limit:4 offset:3 %}
+                                                    {% for post in sorted-posts" limit:4 offset:3 %}
                                                     {% unless post.tags[0] == "special" %}
                                                     <div class="col-md-3 col-sm-4">
                                                         <a class="hovery" href="{{ post.permalink | absolute_url }}">
@@ -1827,7 +1832,8 @@
 
                                                             </div>
                                                         </div>
-                                                        {% for post in site.posts where: "category","About" limit:3 %}
+                                                        {% assign sorted-posts = site.posts | where: "category","Directory" %}
+                                                        {% for post in sorted-posts limit:3 %}
                                                         {% unless post.tags[0] == "special" %}
                                                         <div class="col-md-3 col-sm-4">
                                                             <a class="hovery" href="{{ post.permalink | absolute_url }}">
@@ -1842,7 +1848,7 @@
                                                           {% endfor %}
                                                         </div>
                                                          <div class="media-container-row content">
-                                                      {% for post in site.posts where: "category","About" limit:4 offset:2 %}
+                                                      {% for post in sorted-posts" limit:4 offset:2 %}
                                                       {% unless post.tags[0] == "special" %}
                                                       <div class="col-md-3 col-sm-4">
                                                           <a class="hovery" href="{{ post.permalink | absolute_url }}">
