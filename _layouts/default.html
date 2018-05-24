@@ -1182,7 +1182,12 @@
                                 </div>
 
                             </li>
-                            <li style=" width:12.5%" class="nav-item dropdown">
+                            {% if (page.category[0] == "Join") %}
+                          <li style=" width:12.5%" class="nav-item dropdown activeSpecial">
+                            {% endif %}
+                            {% if (page.category[0] != "Join") %}
+                          <li style=" width:12.5%" class="nav-item dropdown">
+                          {% endif %}
                                 <a style="font-family:'Montserrat-ExtraBold';" class="nav-link link text-black display-4" href="//" data-toggle="dropdown-submenu">
                                     Join
                                 </a>
@@ -1227,74 +1232,34 @@
                                                 </div>
                                                 <div class="footer3 section_3" id="footer3-7" style=" height:100%; width:100%; padding:1rem; background:rgb(235,235,235);">
                                                     <div class="media-container-row content">
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
+                                                      {% for post in site.posts where: "category","Join" limit:4 %}
+                                                      {% unless post.tags[0] == "special" %}
+                                                      <div class="col-md-3 col-sm-4">
+                                                          <a class="hovery" href="{{ post.permalink | absolute_url }}">
+                                                            <div>
+                                                                     <span class="listServe">{{ post.title }}</span>
+                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">{{ post.blurb }}</p>
 
-                                                                    <span class="listServe">AFFILIATION AND DUES</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Information on TSA's membership affiliation and the cost of dues.</p>
-
+                                                              </div>
+                                                              </a>
+                                                            </div>
+                                                            {% endunless %}
+                                                        {% endfor %}
+                                                      </div>
+                                                       <div class="media-container-row content">
+                                                    {% for post in site.posts where: "category","Join" limit:4 offset:3 %}
+                                                    {% unless post.tags[0] == "special" %}
+                                                    <div class="col-md-3 col-sm-4">
+                                                        <a class="hovery" href="{{ post.permalink | absolute_url }}">
+                                                          <div>
+                                                                   <span class="listServe">{{ post.title }}</span>
+                                                                  <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">{{ post.blurb }}</p>
                                                                 </div>
+                                                              </a>
 
-                                                            </a>
                                                         </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">BEING AND ADVISOR</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">What you need to know about having a TSA chapter.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">ONLINE AFFILIATION INSTRUCTIONS</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Are you a teacher ready to start a TSA chapter?</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="media-container-row content">
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">MEMBER AFFILIATION POLICIES</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Rules for affiliating and managing a chapter.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">TESTIMONIALS</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Learn what is being said about TSA.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">TSA DRESS CODE</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Know the official dress code policy for TSA’s competitions and other activities.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
+                                                        {% endunless %}
+                                                      {% endfor %}
                                                     </div>
                                                 </div>
                                             </div>
@@ -1303,7 +1268,12 @@
                                 </div>
 
                             </li>
-                            <li style=" width:12.5%" class="nav-item dropdown">
+                            {% if (page.category[0] == "Competitions") %}
+                          <li style=" width:12.5%" class="nav-item dropdown activeSpecial">
+                            {% endif %}
+                            {% if (page.category[0] != "Competitions") %}
+                          <li style=" width:12.5%" class="nav-item dropdown">
+                          {% endif %}
                                 <a style="font-family:'Montserrat-ExtraBold';" class="nav-link link text-black display-4" href="//" data-toggle="dropdown-submenu">
                                     Competitions
                                 </a>
@@ -1349,96 +1319,34 @@
                                                 </div>
                                                 <div class="footer3 section_3" id="footer3-7" style=" height:100%; width:100%; padding:1rem; background:rgb(235,235,235);">
                                                     <div class="media-container-row content">
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
+                                                      {% for post in site.posts where: "category","Competitions" limit:4 %}
+                                                      {% unless post.tags[0] == "special" %}
+                                                      <div class="col-md-3 col-sm-4">
+                                                          <a class="hovery" href="{{ post.permalink | absolute_url }}">
+                                                            <div>
+                                                                     <span class="listServe">{{ post.title }}</span>
+                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">{{ post.blurb }}</p>
 
-                                                                    <span class="listServe">COMPETITION FORMS</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Forms and related documents for national TSA competitions.</p>
-
+                                                              </div>
+                                                              </a>
+                                                            </div>
+                                                            {% endunless %}
+                                                        {% endfor %}
+                                                      </div>
+                                                       <div class="media-container-row content">
+                                                    {% for post in site.posts where: "category","Competitions" limit:4 offset:3 %}
+                                                    {% unless post.tags[0] == "special" %}
+                                                    <div class="col-md-3 col-sm-4">
+                                                        <a class="hovery" href="{{ post.permalink | absolute_url }}">
+                                                          <div>
+                                                                   <span class="listServe">{{ post.title }}</span>
+                                                                  <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">{{ post.blurb }}</p>
                                                                 </div>
+                                                              </a>
 
-                                                            </a>
                                                         </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">TSA HIGH SCHOOL COMPETITIONS</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Overview of TSA's high school competitive events.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">TSA MIDDLE SCHOOL COMPETITIONS</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Overview of TSA's middle school competitive events.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">TSA DRESS CODE</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Know the official dress code policy for TSA’s competitions and other activities.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="media-container-row content">
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">JUNIOR SOLAR SPRINT</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Funded by the Army Educational Outreach Program (AEOP), JSS engages 5th - 8th grade youth in designing, building and racing model solar cars.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">TSA <em>TEAMS</em> COMPETITION</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Tests of Engineering Aptitude, Mathematics and Science (TEAMS) is an annual competition for high school and middle school students. The theme for 2017 is “Engineering The Environment.”</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">PROJECT LEAD THE WAY (PLTW) PARTNERSHIP</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">TSA partners with PLTW to advance shared goals for success in science, technology, engineering and mathematics education.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">VEX ROBOTICS COMPETITION</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">A Signature Robotics Competition Using the VEX Robotics Design System.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
+                                                        {% endunless %}
+                                                      {% endfor %}
                                                     </div>
                                                 </div>
                                             </div>
@@ -1450,7 +1358,12 @@
                                 </div>
 
                             </li>
-                            <li style=" width:12.5%" class="nav-item dropdown">
+                            {% if (page.category[0] == "Leadership") %}
+                          <li style=" width:12.5%" class="nav-item dropdown activeSpecial">
+                            {% endif %}
+                            {% if (page.category[0] != "Leadership") %}
+                          <li style=" width:12.5%" class="nav-item dropdown">
+                          {% endif %}
                                 <a style="font-family:'Montserrat-ExtraBold';" class="nav-link link text-black display-4" href="//" data-toggle="dropdown-submenu">
                                     Leadership
                                 </a>
@@ -1492,75 +1405,34 @@
                                                 </div>
                                                 <div class="footer3 section_3" id="footer3-7" style=" height:100%; width:100%; padding:1rem; background:rgb(235,235,235);">
                                                     <div class="media-container-row content">
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
+                                                      {% for post in site.posts where: "category","Leadership" limit:4 %}
+                                                      {% unless post.tags[0] == "special" %}
+                                                      <div class="col-md-3 col-sm-4">
+                                                          <a class="hovery" href="{{ post.permalink | absolute_url }}">
+                                                            <div>
+                                                                     <span class="listServe">{{ post.title }}</span>
+                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">{{ post.blurb }}</p>
 
-                                                                    <span class="listServe">THE STUDENT LEADERSHIP CHALLENGE</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">See lesson plans and activities for teaching the Five Practices for Becoming an Exemplary Leader.</p>
-
+                                                              </div>
+                                                              </a>
+                                                            </div>
+                                                            {% endunless %}
+                                                        {% endfor %}
+                                                      </div>
+                                                       <div class="media-container-row content">
+                                                    {% for post in site.posts where: "category","Leadership" limit:4 offset:3 %}
+                                                    {% unless post.tags[0] == "special" %}
+                                                    <div class="col-md-3 col-sm-4">
+                                                        <a class="hovery" href="{{ post.permalink | absolute_url }}">
+                                                          <div>
+                                                                   <span class="listServe">{{ post.title }}</span>
+                                                                  <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">{{ post.blurb }}</p>
                                                                 </div>
+                                                              </a>
 
-                                                            </a>
                                                         </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">NATIONAL TSA OFFICER HIGHLIGHTS</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">The national TSA officers lead TSA's members throughout the year.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">NATIONAL TSA OFFICER CANDIDATE PROGRAM</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Interested in running for a national office? Here’s what's involved.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="media-container-row content">
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">LEAP OVERVIEW</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">TSA's Leadership Program - Leadership, Education, Achievement and Personal Growth.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">LEAP LEGACY CHAPTER</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Chapters showcase their Leadership activities for a chance for national recognition.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">LEAP COMPETITION ENGAGEMENT</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Leadership is incorporated into each TSA competition.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
+                                                        {% endunless %}
+                                                      {% endfor %}
 
                                                     </div>
                                                 </div>
@@ -1573,7 +1445,12 @@
                                 </div>
 
                             </li>
-                            <li style=" width:12.5%" class="nav-item dropdown">
+                            {% if (page.category[0] == "Events") %}
+                          <li style=" width:12.5%" class="nav-item dropdown activeSpecial">
+                            {% endif %}
+                            {% if (page.category[0] != "Events") %}
+                          <li style=" width:12.5%" class="nav-item dropdown">
+                          {% endif %}
                                 <a style="font-family:'Montserrat-ExtraBold';" class="nav-link link text-black display-4" href="//" data-toggle="dropdown-submenu">
                                     Events
                                 </a>
@@ -1622,76 +1499,34 @@
 
                                                     <div class="media-container-row content">
 
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
+                                                      {% for post in site.posts where: "category","Events" limit:4 %}
+                                                      {% unless post.tags[0] == "special" %}
+                                                      <div class="col-md-3 col-sm-4">
+                                                          <a class="hovery" href="{{ post.permalink | absolute_url }}">
+                                                            <div>
+                                                                     <span class="listServe">{{ post.title }}</span>
+                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">{{ post.blurb }}</p>
 
-                                                                    <span class="listServe">NATIONAL TSA CONFERENCE</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">TSA's annual main event. Location, accommodation and competition information.</p>
-
+                                                              </div>
+                                                              </a>
+                                                            </div>
+                                                            {% endunless %}
+                                                        {% endfor %}
+                                                      </div>
+                                                       <div class="media-container-row content">
+                                                    {% for post in site.posts where: "category","Events" limit:4 offset:3 %}
+                                                    {% unless post.tags[0] == "special" %}
+                                                    <div class="col-md-3 col-sm-4">
+                                                        <a class="hovery" href="{{ post.permalink | absolute_url }}">
+                                                          <div>
+                                                                   <span class="listServe">{{ post.title }}</span>
+                                                                  <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">{{ post.blurb }}</p>
                                                                 </div>
+                                                              </a>
 
-                                                            </a>
                                                         </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">STATE CONFERENCES</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">State delegations hold regional and/or state conferences.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">TSA UNITE</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Learn about a summer STEM program for high school students.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="media-container-row content">
-
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">NATIONAL TSA WEEK</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Showcase your TSA chapter to your school and community.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">CAREER AND TECHNICAL EDUCATION MONTH</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Support the annual recognition of career and technical education.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">TSA ADVISOR APPRECIATION WEEK</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Student members can show their gratitide to the chapter advisors who make TSA possible.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
+                                                        {% endunless %}
+                                                      {% endfor %}
                                                     </div>
                                                 </div>
                                             </div>
@@ -1703,7 +1538,12 @@
                                 </div>
 
                             </li>
-                            <li style=" width:12.5%" class="nav-item dropdown">
+                            {% if (page.category[0] == "Students") %}
+                          <li style=" width:12.5%" class="nav-item dropdown activeSpecial">
+                            {% endif %}
+                            {% if (page.category[0] != "Students") %}
+                          <li style=" width:12.5%" class="nav-item dropdown">
+                          {% endif %}
                                 <a style="font-family:'Montserrat-ExtraBold';" class="nav-link link text-black display-4" href="//" data-toggle="dropdown-submenu">
                                     Students
                                 </a>
@@ -1766,96 +1606,34 @@
                                                 <div class="footer3 section_3" id="footer3-7" style=" height:100%; width:100%; padding:1rem; background:rgb(235,235,235);">
 
                                                     <div class="media-container-row content">
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
+                                                      {% for post in site.posts where: "category","Students" limit:4 %}
+                                                      {% unless post.tags[0] == "special" %}
+                                                      <div class="col-md-3 col-sm-4">
+                                                          <a class="hovery" href="{{ post.permalink | absolute_url }}">
+                                                            <div>
+                                                                     <span class="listServe">{{ post.title }}</span>
+                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">{{ post.blurb }}</p>
 
-                                                                    <span class="listServe">SCHOOL SCENE NEWSLETTER</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">TSA's official online newsletter. Published three times a year.</p>
-
+                                                              </div>
+                                                              </a>
+                                                            </div>
+                                                            {% endunless %}
+                                                        {% endfor %}
+                                                      </div>
+                                                       <div class="media-container-row content">
+                                                    {% for post in site.posts where: "category","Students" limit:4 offset:3 %}
+                                                    {% unless post.tags[0] == "special" %}
+                                                    <div class="col-md-3 col-sm-4">
+                                                        <a class="hovery" href="{{ post.permalink | absolute_url }}">
+                                                          <div>
+                                                                   <span class="listServe">{{ post.title }}</span>
+                                                                  <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">{{ post.blurb }}</p>
                                                                 </div>
+                                                              </a>
 
-                                                            </a>
                                                         </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">COLLEGE & CAREER PATH INFORMATION</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Links and resources for a STEM career path.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">STUDENT SCHOLARSHIP</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">TSA members have the opportunity to earn post-secondary scholarship funding.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">ACHIEVEMENT & RECOGNITION AWARDS</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Individuals who contribute to the goals of TSA are recognized.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="media-container-row content">
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">NATIONAL SERVICE PROJECT</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">TSA partners with the American Cancer Society. Get involved in this worthwhile cause.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">TSA CHAMPION FUND</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Contribute to this philanthropic program to help middle and high school students to participate in TSA.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe"><em>COLLEGE AWARENESS OF TSA</em> INITIATIVE</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Learn how TSA works with colleges to get recognition for its members. See the letter of support for TSA and learn how getting involved can help with college admissions.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">DRESS CODE</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Know the official dress code policy for TSA’s competitions and other activities.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
+                                                        {% endunless %}
+                                                      {% endfor %}
                                                     </div>
                                                 </div>
                                             </div>
@@ -1867,7 +1645,12 @@
                                 </div>
 
                             </li>
-                            <li style=" width:12.5%" class="nav-item dropdown">
+                            {% if (page.category[0] == "Adults") %}
+                          <li style=" width:12.5%" class="nav-item dropdown activeSpecial">
+                            {% endif %}
+                            {% if (page.category[0] != "Adults") %}
+                          <li style=" width:12.5%" class="nav-item dropdown">
+                          {% endif %}
                                 <a style="font-family:'Montserrat-ExtraBold';" class="nav-link link text-black display-4" href="//" data-toggle="dropdown-submenu">
                                     Adults
                                 </a>
@@ -1931,96 +1714,34 @@
                                                 <div class="footer3 section_3" id="footer3-7" style=" height:100%; width:100%; padding:1rem; background:rgb(235,235,235);">
 
                                                     <div class="media-container-row content">
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
+                                                      {% for post in site.posts where: "category","Adults" limit:4 %}
+                                                      {% unless post.tags[0] == "special" %}
+                                                      <div class="col-md-3 col-sm-4">
+                                                          <a class="hovery" href="{{ post.permalink | absolute_url }}">
+                                                            <div>
+                                                                     <span class="listServe">{{ post.title }}</span>
+                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">{{ post.blurb }}</p>
 
-                                                                    <span class="listServe">TOOLKITS & RESOURCES</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Information and materials that support TSA chapter activities.</p>
-
+                                                              </div>
+                                                              </a>
+                                                            </div>
+                                                            {% endunless %}
+                                                        {% endfor %}
+                                                      </div>
+                                                       <div class="media-container-row content">
+                                                    {% for post in site.posts where: "category","Adults" limit:4 offset:3 %}
+                                                    {% unless post.tags[0] == "special" %}
+                                                    <div class="col-md-3 col-sm-4">
+                                                        <a class="hovery" href="{{ post.permalink | absolute_url }}">
+                                                          <div>
+                                                                   <span class="listServe">{{ post.title }}</span>
+                                                                  <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">{{ post.blurb }}</p>
                                                                 </div>
+                                                              </a>
 
-                                                            </a>
                                                         </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">SCHOOL SCENE NEWSLETTER</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">TSA's official online newsletter. Published three times a year.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">NATIONAL  SERVICE PROJECT</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">TSA partners with the American Cancer Society. Get involved in this worthwhile cause.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">ACHIEVEMENT & RECOGNITION AWARDS</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Individuals who contribute to the goals of TSA are recognized.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="media-container-row content">
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">LEGISLATIVE TOOLS</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Resources for communicating with legislators about TSA’s purpose.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">TRADEMARK POLICIES</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Document that governs the use of the TSA name and emblem.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">VOLUNTEER OPPORTUNITIES</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">TSA offers a variety of volunteer opportunities for adults who are engaged in STEM careers and education.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">TSA DRESS CODE</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Know the official dress code policy for TSA’s competitions and other activities.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
+                                                        {% endunless %}
+                                                      {% endfor %}
 
                                                     </div>
                                                     <div content="" style="padding:1rem"></div>
@@ -2034,7 +1755,12 @@
                                 </div>
 
                             </li>
-                            <li style=" width:12.5%" class="nav-item dropdown">
+                            {% if (page.category[0] == "Directory") %}
+                          <li style=" width:12.5%" class="nav-item dropdown activeSpecial">
+                            {% endif %}
+                            {% if (page.category[0] != "Directory") %}
+                          <li style=" width:12.5%" class="nav-item dropdown">
+                          {% endif %}
                                 <a style="font-family:'Montserrat-ExtraBold';" class="nav-link link text-black display-4" href="//" data-toggle="dropdown-submenu">
                                     Directory
                                 </a>
@@ -2099,85 +1825,34 @@
 
                                                             </div>
                                                         </div>
+                                                        {% for post in site.posts where: "category","About" limit:4 %}
+                                                        {% unless post.tags[0] == "special" %}
                                                         <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">ALUMNI</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Contact information for the National TSA Alumni Association Council.</p>
+                                                            <a class="hovery" href="{{ post.permalink | absolute_url }}">
+                                                              <div>
+                                                                       <span class="listServe">{{ post.title }}</span>
+                                                                      <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">{{ post.blurb }}</p>
 
                                                                 </div>
-
-                                                            </a>
+                                                                </a>
+                                                              </div>
+                                                              {% endunless %}
+                                                          {% endfor %}
                                                         </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
+                                                         <div class="media-container-row content">
+                                                      {% for post in site.posts where: "category","About" limit:4 offset:3 %}
+                                                      {% unless post.tags[0] == "special" %}
+                                                      <div class="col-md-3 col-sm-4">
+                                                          <a class="hovery" href="{{ post.permalink | absolute_url }}">
+                                                            <div>
+                                                                     <span class="listServe">{{ post.title }}</span>
+                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">{{ post.blurb }}</p>
+                                                                  </div>
+                                                                </a>
 
-                                                                    <span class="listServe">BOARD OF DIRECTORS</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">The governing body of TSA, Inc.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">COMPETITION REGULATIONS COMMITTEE</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">The authority on national TSA competitive events.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="media-container-row content">
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">NATIONAL TSA STAFF</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Administrative office and national TSA staff information.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">NATIONAL TSA OFFICERS</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">The president, vice president, secretary, treasurer, reporter and sergeant-at-arms.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">REGIONAL COORDINATORS</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">An available resource for TSA activities.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-3 col-sm-4">
-                                                            <a class="hovery">
-                                                                <div>
-
-                                                                    <span class="listServe">STATE DELEGATIONS</span>
-                                                                    <p style="margin:0px !important; padding:0px !important; font-family:Montserrat-Light; float:left;" class="listServe2">Alphabetical listing of state delegation contact information.</p>
-
-                                                                </div>
-
-                                                            </a>
-                                                        </div>
+                                                          </div>
+                                                          {% endunless %}
+                                                        {% endfor %}
 
                                                     </div>
                                                     <div content="" style="padding:1rem"></div>

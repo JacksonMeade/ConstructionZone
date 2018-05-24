@@ -8,7 +8,7 @@ title: "Home"
     <div class="full-screen">
         <div class="custom-slider slide carousel" data-pause="true" data-keyboard="false" data-ride="carousel" data-interval="8000">
             <ol class="carousel-indicators">
-              {% assign sorted-posts = site.posts | where: "tag","jumbotron" %}
+              {% assign sorted-posts = site.posts | where: "tags","jumbotron" %}
               {% for post in sorted-posts %}
               {% if (forloop.first) %}
                 <li data-app-prevent-settings="" data-target="#slider1-4" data-slide-to="{{ forloop.index0 }}" class="active"></li>
@@ -20,7 +20,7 @@ title: "Home"
             </ol>
             <div class="carousel-inner" role="listbox">
 
-              {% assign sorted-posts = site.posts | where: "tag","jumbotron" %}
+              {% assign sorted-posts = site.posts | where: "tags","jumbotron" %}
               {% for post in sorted-posts %}
                 {% if (forloop.first) %}
                 <div class="carousel-item slider-fullscreen-image active" data-bg-video-slide="false" style="min-height:74vh !important; background-image: url({{ post.reviewImgUrl | absolute_url }});">
@@ -42,7 +42,7 @@ title: "Home"
 
                                       </div>
 
-                                      <!--SOCIAL ICONS AREA FOR SPECIAL FEATURES - TODO --><!--  
+                                      <!--SOCIAL ICONS AREA FOR SPECIAL FEATURES - TODO --><!--
                                       <hr style="border:1px solid white;">
                                       <div style="background-position: 50% 50%;background-repeat: no-repeat;background-size: cover;padding-top: 0.25rem;padding-bottom: 2rem;position:relative;color:white;">
                                           <div class="container">
